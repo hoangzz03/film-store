@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_camera
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: camera_store
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app123
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
+
+  backend:
+    build: ./backend
+    container_name: backend_camera
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: app
+      DB_PASSWORD: app123
+      DB_NAME: camera_store
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build: ./frontend
+    container_name: frontend_camera
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+  admin:
+    build: ./admin
+    container_name: admin_camera
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+volumes:
+  mysql_data:
