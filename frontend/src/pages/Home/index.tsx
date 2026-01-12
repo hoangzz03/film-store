@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ItemProduct from "../../components/ItemProduct";
 import ItemBlog from "../../components/ItemBlog";
 import { getAllProduct } from "../Products/utils/product.utils";
@@ -8,8 +8,8 @@ import HeroImageSlider from "../../components/heroImageSlider";
 const Home = () => {
     const [data, setData] = useState<ProductData[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [user, setUser] = useState<UserFull>()
-    const [auth, setAuth] = useState<AuthState>();
+    const [, setUser] = useState<UserFull>()
+    const [, setAuth] = useState<AuthState>();
     const server = import.meta.env.VITE_SERVER;
 
     useEffect(() => {
@@ -39,6 +39,8 @@ const Home = () => {
                         orderId: payment.orderId
                     })
                 })
+                data3 = await data3.json();
+                
             })
             console.log(2);
         }

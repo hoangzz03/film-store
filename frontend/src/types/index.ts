@@ -18,7 +18,8 @@ export interface OrderDetails {
         email: string;
         address: string;
         phone: string;
-    }
+    },
+    statusCode?: number;
 }
 
 export interface User {
