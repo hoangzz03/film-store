@@ -23,7 +23,7 @@ services:
     depends_on:
       - mysql
     env_file:
-      - .env
+      - ./backend/.env
     expose:
       - "3000"
     networks:
