@@ -65,12 +65,6 @@ const CartPage: React.FC = () => {
     };
 
     const getTotal = () => {
-        console.log('====================================');
-        console.log(orderItems);
-        console.log('====================================');
-        if (orderItems.statusCode === 500) {
-            return 0;
-        }
         return orderItems ? orderItems.reduce((total, item) => total + (item.product?.price * item.quantity), 0) : orderItems;
     };
     const checkOut = async () => {

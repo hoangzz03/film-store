@@ -19,7 +19,6 @@ export interface OrderDetails {
         address: string;
         phone: string;
     },
-    statusCode?: number;
 }
 
 export interface User {
