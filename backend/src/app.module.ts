@@ -12,9 +12,10 @@ import { paymentProvider } from './provider/payment.provider';
 import { DatabaseModule } from './database/database.module';
 import { UploadModule } from './upload/upload.module';
 import { BlogModule } from './blog/blog.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [UsersModule, ProductCategoryModule, RoleModule, ProductsModule, OrderDetailModule, PaymentModule, AuthModule, DatabaseModule, UploadModule, BlogModule],
+  imports: [UsersModule, ProductCategoryModule, RoleModule, ProductsModule, OrderDetailModule, PaymentModule, AuthModule, DatabaseModule, UploadModule, BlogModule,  ConfigModule.forRoot({isGlobal: true,}),],
   controllers: [AppController],
   providers: [
     ...paymentProvider,
