@@ -1,4 +1,4 @@
-import React from 'react';
+
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { ProductData } from '../../types';
 import { Link } from 'react-router-dom';
