@@ -1,5 +1,5 @@
 // src/App.tsx
-import { BrowserRouter as Router, Routes, Route, Navigate, Outlet, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet, BrowserRouter } from 'react-router-dom';
 import DashboardLayout from './components/layout/DashboardLayout';
 import Dashboard from './pages/Home';
 import Users from './pages/UserManagement';

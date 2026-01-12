@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ItemProduct from "../../components/ItemProduct";
 import ItemBlog from "../../components/ItemBlog";
 import { getAllProduct } from "../Products/utils/product.utils";
-import { Link } from 'react-router-dom';
 import { AuthState, Payment, ProductData, UserFull } from "../../types";
 import { checkLogin } from "../Auth/utils/login.utils";
 import HeroImageSlider from "../../components/heroImageSlider";

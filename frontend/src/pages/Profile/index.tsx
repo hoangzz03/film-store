@@ -1,7 +1,6 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { AuthState, UpdateProfileFormData } from '../../types';
 import { checkLogin } from '../Auth/utils/login.utils';
-import { update } from './utils/profile.utils';
 import { useNavigate } from 'react-router-dom';
 
 const Profile: React.FC = () => {

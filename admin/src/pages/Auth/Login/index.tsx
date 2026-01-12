@@ -1,14 +1,12 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { LoginFormData } from '../../../types';
 import { login } from '../utils/login.utils';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const LoginPage: React.FC = () => {
-    const navigate = useNavigate();
     const [formData, setFormData] = useState<LoginFormData>({
         email: '',
         password: ''

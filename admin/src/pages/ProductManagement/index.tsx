@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Products: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [filterBy] = useState<'all' | 'name' | 'email' | 'role' | 'status'>('all');
+  const [filterBy,] = useState<'all' | 'name' | 'email' | 'role' | 'status'>('all');
   const [data, setData] = useState<ProductData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 

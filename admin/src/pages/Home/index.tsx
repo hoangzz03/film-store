@@ -56,7 +56,7 @@ const SimpleDashboard: React.FC = () => {
         return dateA.getTime() - dateB.getTime();
       });
 
-      const usersByDate = sortedData.reduce((acc: User[], user: User) => {
+      const usersByDate = sortedData.reduce((acc: Record<string, number>, user: User) => {
         const date = new Date(user.createat);
         const key = date.toISOString().split('T')[0];
         acc[key] = (acc[key] || 0) + 1;
